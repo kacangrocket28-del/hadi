@@ -3,164 +3,142 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PERSIJA JAKARTA</title>
+<title>Happy Girlfriend Day ❤️</title>
 
 <style>
-
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
 }
 
 body{
-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-background:linear-gradient(135deg,#ff6600,#ff3300);
-overflow:hidden;
+    overflow:hidden;
+    height:100vh;
+    background:linear-gradient(135deg,#ff9ec4,#ffc9de,#ffe6f0);
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
 
-.container{
-width:90%;
-max-width:400px;
-background:white;
-padding:25px;
-border-radius:25px;
-text-align:center;
-box-shadow:0 0 30px rgba(0,0,0,.3);
-animation:muncul 1.5s;
+.card{
+    width:90%;
+    max-width:450px;
+    background:rgba(255,255,255,.2);
+    backdrop-filter:blur(10px);
+    border-radius:25px;
+    padding:35px;
+    text-align:center;
+    color:white;
+    box-shadow:0 0 25px rgba(255,255,255,.3);
+    z-index:10;
+    animation:fadeIn 2s;
 }
 
-@keyframes muncul{
-from{
-opacity:0;
-transform:translateY(40px);
-}
-to{
-opacity:1;
-transform:translateY(0);
-}
+.card h1{
+    font-size:34px;
+    margin-bottom:15px;
 }
 
-.logo{
-width:180px;
-animation:putar 4s infinite linear;
+.card p{
+    font-size:18px;
+    line-height:1.8;
 }
 
-@keyframes putar{
-0%{
-transform:rotate(0deg);
-}
-100%{
-transform:rotate(360deg);
-}
+.love{
+    margin-top:25px;
+    font-size:28px;
+    animation:pulse 1.2s infinite;
 }
 
-h1{
-margin-top:15px;
-color:#ff3300;
+@keyframes pulse{
+    0%{transform:scale(1);}
+    50%{transform:scale(1.2);}
+    100%{transform:scale(1);}
 }
 
-p{
-margin-top:15px;
-line-height:28px;
-font-size:17px;
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
 }
 
-button{
-margin-top:20px;
-padding:12px 25px;
-border:none;
-border-radius:20px;
-background:#ff3300;
-color:white;
-font-size:16px;
-cursor:pointer;
+/* Hati */
+.heart{
+    position:absolute;
+    color:#ff2d75;
+    animation:fall linear infinite;
+    user-select:none;
 }
 
-button:hover{
-transform:scale(1.05);
+@keyframes fall{
+    0%{
+        transform:translateY(-10vh) rotate(0deg);
+        opacity:1;
+    }
+    100%{
+        transform:translateY(110vh) rotate(360deg);
+        opacity:0;
+    }
 }
-
-.marquee{
-position:absolute;
-top:20px;
-width:100%;
-color:white;
-font-size:25px;
-font-weight:bold;
-animation:jalan 12s linear infinite;
-white-space:nowrap;
-}
-
-@keyframes jalan{
-0%{
-transform:translateX(100%);
-}
-100%{
-transform:translateX(-100%);
-}
-}
-
 </style>
 </head>
-
 <body>
 
-<div class="marquee">
-PERSIJA SAMPAI MATI • JAKMANIA • PERSIJA JUARA •
+<div class="card">
+    <h1>❤️ Happy Girlfriend Day ❤️</h1>
+
+    <p>
+        Untuk <b>Sayang</b> 💕<br><br>
+
+        Terima kasih karena selalu hadir
+        di setiap cerita hidupku.
+        Semoga kita selalu bersama,
+        saling menjaga,
+        saling menguatkan,
+        dan selalu bahagia.
+        <br><br>
+        Aku sayang kamu hari ini,
+        besok,
+        dan seterusnya. ❤️
+    </p>
+
+    <div class="love">I LOVE YOU ❤️</div>
 </div>
-
-<div class="container" id="box">
-
-<img src="logo.png" class="logo">
-
-<h1>PERSIJA JAKARTA</h1>
-
-<p>
-Aku bangga menjadi bagian dari Jakmania.
-
-Menang ataupun kalah, Persija tetap di hati.
-</p>
-
-<button onclick="persija()">
-Klik Disini
-</button>
-
-</div>
-
 
 <script>
 
-function persija(){
+function createHeart(){
 
-document.getElementById("box").innerHTML = `
+    const heart=document.createElement("div");
 
-<h1>SALAM SATU NYALI!</h1>
+    heart.classList.add("heart");
 
-<h2>MACAN KEMAYORAN</h2>
+    heart.innerHTML="❤️";
 
-<p>
+    heart.style.left=Math.random()*100+"vw";
 
-Persija Jakarta bukan sekadar klub sepak bola.
+    heart.style.fontSize=(15+Math.random()*35)+"px";
 
-Persija adalah kebanggaan, perjuangan, dan cinta yang tidak pernah pudar.
+    heart.style.animationDuration=(4+Math.random()*5)+"s";
 
-Kami akan selalu berdiri di tribun, bernyanyi, dan mendukungmu sampai akhir.
+    document.body.appendChild(heart);
 
-PERSIJA SAMPAI MATI!
-
-</p>
-
-`;
+    setTimeout(()=>{
+        heart.remove();
+    },9000);
 
 }
+
+setInterval(createHeart,120);
 
 </script>
 
 </body>
 </html>
-<img src="pia.jpg" class="pia">
